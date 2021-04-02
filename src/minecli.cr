@@ -97,15 +97,14 @@ class Minecli
   end
 end
 
-def print_color(content : String)
-  io = IO::Memory.new 4110
-  RCON.colorize io, content
+def print_color(content : String | Nil)
+  unless content.nil? || content.empty?
+    io = IO::Memory.new 4110
+    RCON.colorize io, content
 
-  puts io.to_s.gsub("\033[0m", "\n").rchop
-  print "\033[0m"
-end
-
-def print_color(content : Nil)
+    puts io.to_s.gsub("\033[0m", "\n").rchop
+    print "\033[0m"
+  end
 end
 
 begin
