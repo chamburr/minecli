@@ -1,0 +1,25 @@
+name: minecli
+version: 0.1.0
+
+authors:
+  - CHamburr <hi@chamburr.xyz>
+
+crystal: 1.0.0
+
+dependencies:
+  rconcr:
+    github: straight-shoota/rconcr
+  fancyline:
+    github: Papierkorb/fancyline
+
+description: Minecraft CLI with RCON support and Journalctl logs
+
+documentation: https://github.com/chamburr/minecli/blob/master/README.md
+
+homepage: https://github.com/chamburr/minecli
+
+license: MIT
+
+targets:
+  minecli:
+    main: src/minecli.cr
