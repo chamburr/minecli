@@ -85,6 +85,7 @@ class Minecli
       end
 
       while input = fancy.readline "> "
+        exit if input == "exit"
         resp = client.command input
         print_color resp
       end
