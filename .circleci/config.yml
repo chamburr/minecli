@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/minecli
+    docker:
+      - image: crystallang/crystal:latest-alpine
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASS
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "shard.lock" }}
+      - run:
+          name: Install dependencies.
+          command: shards install --ignore-crystal-version
+      - save_cache:
+          key: dependency-cache-{{ checksum "shard.lock" }}
+          paths:
+            - ./lib
+      - run:
+          name: test
+          command: crystal spec
+      - run:
+          name: format
+          command: crystal tool format --check

@@ -1,0 +1,14 @@
+[Unit]
+Description=Minecraft Server
+Requires=network-online.target
+
+[Service]
+User=chamburr
+Group=chamburr
+Type=simple
+Restart=always
+WorkingDirectory=/home/chamburr/minecraft
+ExecStart=/usr/bin/java -Xms2048M -Xmx2048M -jar ./paper.jar nogui --noconsole
+
+[Install]
+WantedBy=multi-user.target
