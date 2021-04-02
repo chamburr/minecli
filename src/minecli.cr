@@ -70,6 +70,10 @@ class Minecli
 
       fancy = Fancyline.new
 
+      fancy.actions.set Fancyline::Key::Control::CtrlH do |ctx|
+        ctx.editor.remove_at_cursor -1
+      end
+
       unless @no_logs
         spawn do
           Process.run "sudo journalctl -n 0 -f --output-fields MESSAGE --output json -u #{@unit}", shell: true do |proc|
