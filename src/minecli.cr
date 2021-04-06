@@ -81,7 +81,7 @@ class Minecli
               proc.output.gets.try do |entry|
                 fancy.grab_output do
                   puts JSON.parse(entry).as_h["MESSAGE"]
-                  if rand 1..1000 == 420
+                  if rand(1..1000) == 420
                     case rand 1..5
                     when 1
                       puts "i love ruby! <3 -cham"
