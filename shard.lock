@@ -2,11 +2,15 @@ version: 2.0
 shards:
   cute:
     git: https://github.com/papierkorb/cute.git
-    version: 0.3.1
+    version: 0.4.0
 
   fancyline:
     git: https://github.com/papierkorb/fancyline.git
-    version: 0.3.3
+    version: 0.4.1
+
+  future:
+    git: https://github.com/crystal-community/future.cr.git
+    version: 1.0.0
 
   rconcr:
     git: https://github.com/straight-shoota/rconcr.git
