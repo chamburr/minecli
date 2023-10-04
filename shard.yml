@@ -14,7 +14,7 @@ dependencies:
 
 description: Minecraft CLI with RCON support and Journalctl logs
 
-documentation: https://github.com/chamburr/minecli/blob/master/README.md
+documentation: https://github.com/chamburr/minecli/blob/main/README.md
 
 homepage: https://github.com/chamburr/minecli
 
